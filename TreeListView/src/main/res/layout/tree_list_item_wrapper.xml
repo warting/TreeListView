@@ -13,12 +13,12 @@
             android:id="@+id/treeview_list_item_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/collapsed"></ImageView>
+            android:src="@drawable/expander_close_holo_light" />
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/treeview_list_item_frame"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"></FrameLayout>
+        android:layout_weight="1" />
 </LinearLayout>
