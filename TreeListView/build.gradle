@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.5.+'
@@ -15,6 +16,7 @@ group 'se.warting'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 android {
@@ -33,6 +35,38 @@ android {
 dependencies {
     //compile 'com.android.support:appcompat-v7:18.0.0'
 }
+
+
+task deployToMavenLocal {
+    println "Greetings from the  task."
+}
+
+//task testAndroid(type: Exec, dependsOn: publish) {
+//        // suppress all console output during testing unless running `gradle --info`
+//        logging.captureStandardOutput(LogLevel.INFO)
+//        //commandLine 'mvn', 'clean', 'install', '-f', subproject.ext.mavenTestDir
+//        println "XXXXXXXXXXXXXXX installing... XXXXXXXXXXXXXXXXXXXXX"
+//        commandLine 'mvn', 'install:install-file', '-Dfile=TreeListView/build/libs/TreeListView-0.0.1.aar', '-DgroupId=se.warting', '-DartifactId=treelistview', '-Dversion=0.0.1', '-Dpackaging=aar'
+//        //mvn install:install-file -Dfile=build/libs/TreeListView-0.0.1-debug.aar -DgroupId=se.warting -DartifactId=treelistview -Dversion=0.0.1 -Dpackaging=aar
+//        println "XXXXXXXXXXXXXXX The library has been installed! XXXXXXXXXXXXXXXXXXXXX"
+//}
+
+//mvn install:install-file -Dfile=build/libs/TreeListView-0.0.1-debug.aar -DgroupId=se.warting -DartifactId=treelistview -Dversion=0.0.1 -Dpackaging=aar
+task install(type:Exec, dependsOn: publish) {
+    println "XXXXXXXXXXXXXXX installing... XXXXXXXXXXXXXXXXXXXXX"
+    commandLine = ['mvn', 'install:install-file', '-Dfile=build/libs/TreeListView-0.0.1-debug.aar', '-DgroupId=se.warting', '-DartifactId=treelistview', '-Dversion=0.0.1', '-Dpackaging=aar']
+    println "XXXXXXXXXXXXXXX The library has been installed! XXXXXXXXXXXXXXXXXXXXX"
+}
+
+//configure(subprojects) { subproject ->
+//    task testAndroid(type: Exec, dependsOn: install) {
+//        // suppress all console output during testing unless running `gradle --info`
+//        logging.captureStandardOutput(LogLevel.INFO)
+//        commandLine 'mvn', 'clean', 'install', '-f', subproject.ext.mavenTestDir
+//    }
+//}
+
+
 
 //android.libraryVariants
 //publishing {
