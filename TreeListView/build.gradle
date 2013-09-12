@@ -53,9 +53,9 @@ task deployToMavenLocal {
 
 //mvn install:install-file -Dfile=build/libs/TreeListView-0.0.1-debug.aar -DgroupId=se.warting -DartifactId=treelistview -Dversion=0.0.1 -Dpackaging=aar
 task install(type:Exec, dependsOn: build) {
-    println "XXXXXXXXXXXXXXX installing... XXXXXXXXXXXXXXXXXXXXX"
-    commandLine = ['mvn', 'install:install-file', '-Dfile=build/libs/TreeListView-0.0.1-debug.aar', '-DgroupId=se.warting', '-DartifactId=treelistview', '-Dversion=0.0.1', '-Dpackaging=aar']
-    println "XXXXXXXXXXXXXXX The library has been installed! XXXXXXXXXXXXXXXXXXXXX"
+//    //println "XXXXXXXXXXXXXXX installing... XXXXXXXXXXXXXXXXXXXXX"
+    commandLine = ['mvn', 'install:install-file', '-Dfile=build/libs/TreeListView-0.0.1.aar', '-DgroupId=se.warting', '-DartifactId=treelistview', '-Dversion=0.0.1', '-Dpackaging=aar']
+//    //println "XXXXXXXXXXXXXXX The library has been installed! XXXXXXXXXXXXXXXXXXXXX"
 }
 
 //configure(subprojects) { subproject ->
