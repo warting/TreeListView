@@ -114,10 +114,18 @@ public class TreeViewList extends ListView {
 
     }
 
+    public Drawable getExpandedDrawable() {
+        return expandedDrawable;
+    }
+
     public void setExpandedDrawable(final Drawable expandedDrawable) {
         this.expandedDrawable = expandedDrawable;
         syncAdapter();
         treeAdapter.refresh();
+    }
+
+    public Drawable getCollapsedDrawable() {
+        return collapsedDrawable;
     }
 
     public void setCollapsedDrawable(final Drawable collapsedDrawable) {
@@ -126,10 +134,18 @@ public class TreeViewList extends ListView {
         treeAdapter.refresh();
     }
 
+    public Drawable getRowBackgroundDrawable() {
+        return rowBackgroundDrawable;
+    }
+
     public void setRowBackgroundDrawable(final Drawable rowBackgroundDrawable) {
         this.rowBackgroundDrawable = rowBackgroundDrawable;
         syncAdapter();
         treeAdapter.refresh();
+    }
+
+    public Drawable getIndicatorBackgroundDrawable() {
+        return indicatorBackgroundDrawable;
     }
 
     public void setIndicatorBackgroundDrawable(
@@ -139,10 +155,18 @@ public class TreeViewList extends ListView {
         treeAdapter.refresh();
     }
 
+    public int getIndentWidth() {
+        return indentWidth;
+    }
+
     public void setIndentWidth(final int indentWidth) {
         this.indentWidth = indentWidth;
         syncAdapter();
         treeAdapter.refresh();
+    }
+
+    public int getIndicatorGravity() {
+        return indicatorGravity;
     }
 
     public void setIndicatorGravity(final int indicatorGravity) {
@@ -151,48 +175,24 @@ public class TreeViewList extends ListView {
         treeAdapter.refresh();
     }
 
+    public boolean isCollapsible() {
+        return collapsible;
+    }
+
     public void setCollapsible(final boolean collapsible) {
         this.collapsible = collapsible;
         syncAdapter();
         treeAdapter.refresh();
     }
 
+    public boolean isHandleTrackballPress() {
+        return handleTrackballPress;
+    }
+
     public void setHandleTrackballPress(final boolean handleTrackballPress) {
         this.handleTrackballPress = handleTrackballPress;
         syncAdapter();
         treeAdapter.refresh();
-    }
-
-    public Drawable getExpandedDrawable() {
-        return expandedDrawable;
-    }
-
-    public Drawable getCollapsedDrawable() {
-        return collapsedDrawable;
-    }
-
-    public Drawable getRowBackgroundDrawable() {
-        return rowBackgroundDrawable;
-    }
-
-    public Drawable getIndicatorBackgroundDrawable() {
-        return indicatorBackgroundDrawable;
-    }
-
-    public int getIndentWidth() {
-        return indentWidth;
-    }
-
-    public int getIndicatorGravity() {
-        return indicatorGravity;
-    }
-
-    public boolean isCollapsible() {
-        return collapsible;
-    }
-
-    public boolean isHandleTrackballPress() {
-        return handleTrackballPress;
     }
 
 }
